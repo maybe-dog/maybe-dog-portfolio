@@ -2,24 +2,26 @@ version: '3'
 
 services:
   app:
-    build: 
+    build:
       context: .
     ports:
       - 3000:3000
     volumes:
-      - .:/app
-      - /app/node_modules
-    command: ["sh", "-c", "npm run dev"]
+      - .:/home/node/app/
+      - node_modules:/home/node/app/node_modules
+      - /home/node/app/.next
+    command: ['sh', '-c', 'npm run dev']
   ngrok:
     container_name: ngrok
     image: ngrok/ngrok:latest
     restart: unless-stopped
-    command: ["http", "app:3000"]
+    command: ['http', 'app:3000']
     ports:
       - 4040:4040
     depends_on:
       - app
     environment:
       - NGROK_AUTHTOKEN
-    profiles:
-      - tunnel
+
+volumes:
+  node_modules:

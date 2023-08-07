@@ -2,26 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* 
+info: https://github.com/evankarageorgos/hue/blob/master/hue.css
+customized background-color
+*/
+.comet {
+  background-color: #f4f5f7;
+  background-image:
+    -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%),
+    -webkit-radial-gradient(at 50% 87%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3)
+          100%);
+  background-image: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    radial-gradient(at 50% 87%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background-blend-mode: multiply, normal;
+  background-attachment: fixed;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply comet;
+  color: #333;
 }

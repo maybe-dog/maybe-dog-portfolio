@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function AboutMe(): React.JSX.Element {
+export function AboutMeComponent(): React.JSX.Element {
   return (
     <>
       <h1 className='text-5xl'>About Me🌟</h1>

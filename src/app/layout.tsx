@@ -1,12 +1,12 @@
 import Footer from 'components/layouts/Footer';
 import Header from '../components/layouts/Header';
 import './globals.css';
-import { Alegreya_Sans_SC, Zen_Kaku_Gothic_Antique } from 'next/font/google';
+import { Noto_Sans_JP } from 'next/font/google';
 
-const alegreyaSansSc = Alegreya_Sans_SC({ subsets: ['latin'], weight: ['400', '700'] });
-const ZenkakuGothicAntique_normal = Zen_Kaku_Gothic_Antique({
+const noto_sans_jp = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['400', '700'],
+  preload: false,
 });
 
 export const metadata = {
@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={ZenkakuGothicAntique_normal.className}>
+      <body className={noto_sans_jp.className}>
         <Header />
         {children}
         <Footer />

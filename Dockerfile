@@ -2,7 +2,8 @@ FROM node:18.16-alpine
 
 WORKDIR /home/node/app
 
-COPY ./package.json ./
-COPY ./package-lock.json ./
-
+# npm install
+COPY ./package.json ./package-lock.json ./
 RUN npm install
+
+COPY . .

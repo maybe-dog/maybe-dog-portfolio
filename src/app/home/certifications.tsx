@@ -19,9 +19,9 @@ export function CertificationsComponent(): React.JSX.Element {
         <ul className='list-inside'>
           {certifications.map((certification) => (
             <li key={certification.name} className='mt-2'>
-              {certification.name}
+              <h2 className='text-lg'>{certification.name}</h2>
               <ul className='list-disc list-inside'>
-                <li className='text-lg'>{certification.get_date}</li>
+                <li>{certification.get_date}</li>
               </ul>
             </li>
           ))}

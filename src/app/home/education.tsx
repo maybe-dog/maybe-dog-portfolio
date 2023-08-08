@@ -23,12 +23,10 @@ export function EducationComponent(): React.JSX.Element {
         <ul className='list-inside'>
           {educations.map((education) => (
             <li key={education.name} className='mt-2'>
-              {education.name}
+              <h2 className='text-lg'>{education.name}</h2>
               <ul className='list-disc list-inside'>
-                <li className='text-lg'>{education.period}</li>
-                {education.description && (
-                  <li className='text-lg'>{education.description}</li>
-                )}
+                <li>{education.period}</li>
+                {education.description && <li>{education.description}</li>}
               </ul>
             </li>
           ))}

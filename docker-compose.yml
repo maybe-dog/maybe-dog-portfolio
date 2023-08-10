@@ -8,6 +8,9 @@ services:
     ports:
       - 3000:3000
     command: ['sh', '-c', 'npm run dev']
+    volumes:
+      - ./src:/home/node/app/src
+      - ./public:/home/node/app/public
   storybook:
     build:
       context: .
@@ -15,6 +18,9 @@ services:
     ports:
       - 6006:6006
     command: ['sh', '-c', 'npm run storybook']
+    volumes:
+      - ./src:/home/node/app/src
+      - ./public:/home/node/app/public
   ngrok:
     container_name: ngrok
     image: ngrok/ngrok:latest

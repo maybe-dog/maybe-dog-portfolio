@@ -11,7 +11,7 @@ const educations: Education[] = [
   {
     name: '東京工業大学 情報理工学院 情報工学系',
     period: '2017/04 - 2023/03',
-    description: '2021/09 - 2022/03 休学',
+    description: '2020/09 - 2022/03 休学',
   },
 ];
 

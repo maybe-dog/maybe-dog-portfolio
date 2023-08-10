@@ -10,9 +10,9 @@ const links = [
 
 export default function Header(): React.JSX.Element {
   return (
-    <header className='shadow bg-gray-100 py-4 px-8'>
+    <header className='shadow bg-gray-100 dark:bg-neutral-700 py-4 px-8'>
       <div className='h-16 mx-auto px-5 flex items-center justify-between'>
-        <a className={'text-2xl hover:text-cyan-500 transition-colors cursor-pointer'}>
+        <a className={'text-2xl dark:text-neutral-400 hover:text-cyan-500 transition-colors cursor-pointer'}>
           おそらく犬
         </a>
         <ul className='flex items-center gap-5'>

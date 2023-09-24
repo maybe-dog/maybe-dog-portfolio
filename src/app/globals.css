@@ -6,23 +6,14 @@
 info: https://github.com/evankarageorgos/hue/blob/master/hue.css
 customized background-color
 */
-.comet {
-  background-color: #f4f5f7;
-  background-image:
-    -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%),
-    -webkit-radial-gradient(at 50% 87%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3)
-          100%);
-  background-image: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(0, 0, 0, 0.4) 100%
-    ),
-    radial-gradient(at 50% 87%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
-  background-blend-mode: multiply, normal;
-  background-attachment: fixed;
+.whiteNoise {
+  background-color: #e1e6ec;
+  background-image: linear-gradient(-180deg, #e1e6ec 2%, #f0f4f7 96%),
+    radial-gradient(at 50% 100%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 200%);
+  background-blend-mode: normal, color-burn;
 }
 
 body {
-  @apply comet;
+  @apply whiteNoise;
   color: #333;
 }

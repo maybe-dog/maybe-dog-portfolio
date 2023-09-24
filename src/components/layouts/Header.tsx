@@ -21,13 +21,14 @@ export default function Header(props: Props): React.JSX.Element {
           おそらく犬
         </a>
         <ul className='flex items-center gap-5'>
-          {props.links.map((link) => (
-            <li key={link.name}>
-              <Link href={link.to} className={styles.textLink}>
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          {props.links &&
+            props.links.map((link) => (
+              <li key={link.name}>
+                <Link href={link.to} className={styles.textLink}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
         </ul>
       </div>
     </header>

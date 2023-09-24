@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Footer(): React.JSX.Element {
   return (
-    <footer className='bg-gray-100 dark:bg-neutral-700 mt-auto w-auto'>
+    <footer className='border-t-2 bg-gray-100 dark:bg-neutral-700 mt-auto w-auto'>
       <div className='my-2 flex justify-center'>
         <a href='https://twitter.com/maybe_dog_tech' className='mx-2'>
           <Image src='x-icon.svg' alt='X' width='32' height='32' />

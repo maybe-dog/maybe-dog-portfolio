@@ -1,5 +1,3 @@
-import Header from 'components/layouts/Header';
-
 export default function Works() {
   return (
     <div className='flex justify-center'>

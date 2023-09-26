@@ -15,7 +15,7 @@ const bull = (
   </Box>
 );
 
-export type Props = {
+export type TimelineProps = {
   title: string;
   date: {
     year: number;
@@ -28,9 +28,10 @@ export type Props = {
     url: string;
     text: string;
   };
+  logo?: JSX.Element;
 };
 
-export default function TimelineCard(props: Props) {
+export default function TimelineCard(props: TimelineProps) {
   const date_str =
     `${props.date.year}-${props.date.month}` +
     (props.date.day ? `-${props.date.day}` : '');
@@ -50,13 +51,16 @@ export default function TimelineCard(props: Props) {
           <Typography variant='body2'>{props.description}</Typography>
         )}
       </CardContent>
-      {props.link && (
-        <CardActions>
-          <Button size='small' href={props.link.url}>
-            {props.link.text}
-          </Button>
-        </CardActions>
-      )}
+      <div className='flex justify-between'>
+        {props.link && (
+          <CardActions>
+            <Button size='small' href={props.link.url}>
+              {props.link.text}
+            </Button>
+          </CardActions>
+        )}
+        {props.logo}
+      </div>
     </Card>
   );
 }

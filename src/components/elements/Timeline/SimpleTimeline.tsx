@@ -8,16 +8,15 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineCard from './TimelineCard';
-import { type Props as TimelineEvent } from './TimelineCard';
+import { type TimelineProps } from './TimelineCard';
 
-type Props = { events: TimelineEvent[] };
+type Props = { events: TimelineProps[] };
 
 export default function SimpleTimeline(props: Props) {
   return (
     <Timeline position='alternate'>
       {props.events &&
         props.events.map((event) => {
-          const date_str = event.date.toString().split('T')[0];
           return (
             <TimelineItem key={event.title}>
               <TimelineSeparator>

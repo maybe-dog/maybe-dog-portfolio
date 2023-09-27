@@ -6,20 +6,24 @@ import { Article, ZennResponse } from 'types/zenn';
 
 const zenn_url = 'https://zenn.dev';
 const zenn_api_url = zenn_url + '/api/articles?username=maybe_dog&order=latest';
+const zenn_revalidate_sec = 3600;
 
 const fetchZennArticles = async (): Promise<ZennResponse> => {
-  const response = await fetch(zenn_api_url, { next: { revalidate: 3600 } });
+  const response = await fetch(zenn_api_url, {
+    next: { revalidate: zenn_revalidate_sec },
+  });
   return response.json();
 };
 
 export default async function Timeline() {
-  // ZennのAPIから自分の書いた技術記事を取得する関数
+  // ZennのAPIから記事を取得
   const response = await fetchZennArticles();
   const dynamic_events = response.articles.map((article: Article) =>
     zenn2timeline(article),
   );
   const all_events = [...static_events, ...dynamic_events];
 
+  // 日付順(降順)にソート
   const sorted_events = all_events.sort((a, b) => {
     const a_dayjs = dayjs().year(a.date.year).month(a.date.month);
     if (a.date.day) a_dayjs.day(a.date.day);
@@ -30,16 +34,23 @@ export default async function Timeline() {
 
   return (
     <div className='md:flex-col md:w-2/3 mx-auto px-4'>
-      <h1 className='text-4xl text-center my-4'>maybe-dog Timeline⌚</h1>
+      <h1 className='text-4xl text-center my-4'>Timeline</h1>
       <SimpleTimeline events={sorted_events}></SimpleTimeline>
     </div>
   );
 }
 
+/**
+ * // ZennのAPIから自分の書いた技術記事を取得する関数
+ * @param article
+ * @returns TimelineProps
+ */
 const zenn2timeline = (article: Article): TimelineProps => {
+  // 読むのにかかる時間を計算
   const readableCharPerMin = 500;
-  const date = dayjs(article.published_at);
   const time2read_min = Math.ceil(article.body_letters_count / readableCharPerMin);
+
+  const date = dayjs(article.published_at);
   return {
     title: article.title,
     description: `約${time2read_min}分で読めます(${article.body_letters_count}字)`,
@@ -94,7 +105,6 @@ const static_events: TimelineProps[] = [
   },
   {
     title: '東京工業大学 休学',
-    description: '精神的な理由により休学しました。',
     date: {
       year: 2020,
       month: 9,

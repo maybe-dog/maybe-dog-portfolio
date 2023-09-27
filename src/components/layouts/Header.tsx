@@ -13,7 +13,7 @@ type Props = {
 export default function Header(props: Props): React.JSX.Element {
   return (
     <header className='shadow bg-gray-100 dark:bg-neutral-700 py-4 px-8'>
-      <div className='mx-auto px-2 sm:flex'>
+      <div className='mx-auto px-2 my-2 sm:flex'>
         <div className='flex flex-row'>
           <Link
             href='/'

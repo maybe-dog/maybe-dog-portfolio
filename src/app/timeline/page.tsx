@@ -8,19 +8,23 @@ const zenn_url = 'https://zenn.dev';
 const zenn_api_url = zenn_url + '/api/articles?username=maybe_dog&order=latest';
 const zenn_revalidate_sec = 3600;
 
-const fetchZennArticles = async (): Promise<ZennResponse> => {
-  const response = await fetch(zenn_api_url, {
-    next: { revalidate: zenn_revalidate_sec },
-  });
-  return response.json();
+const fetchZennArticles = async (): Promise<ZennResponse | null> => {
+  try {
+    const response = await fetch(zenn_api_url, {
+      next: { revalidate: zenn_revalidate_sec },
+    });
+    return response.json();
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
 };
 
 export default async function Timeline() {
   // ZennのAPIから記事を取得
   const response = await fetchZennArticles();
-  const dynamic_events = response.articles.map((article: Article) =>
-    zenn2timeline(article),
-  );
+  const dynamic_events =
+    response?.articles.map((article: Article) => zenn2timeline(article)) || [];
   const all_events = [...static_events, ...dynamic_events];
 
   // 日付順(降順)にソート

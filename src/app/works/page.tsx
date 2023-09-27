@@ -15,7 +15,7 @@ export default function Works() {
 
 const works: WorkCardProps[] = [
   {
-    image: '/github-icon.svg',
+    image: '/maybe-dog-logo.png',
     fit: 'contain',
     alt: 'maybe-dog-portfolio',
     title: 'maybe-dog-portfolio',

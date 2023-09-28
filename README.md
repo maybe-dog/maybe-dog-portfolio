@@ -15,3 +15,4 @@ https://maybe-dog.dev
 - Vercel(デプロイ先)
 - Cloudflare Registrar(ドメイン取得)
 - Docker(開発時に利用)
+- WSL2(開発環境)

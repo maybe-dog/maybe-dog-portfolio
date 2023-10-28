@@ -26,4 +26,16 @@ const works: WorkCardProps[] = [
       text: 'GitHub',
     },
   },
+  {
+    image: 'github-icon.svg',
+    fit: 'contain',
+    alt: 'trend-tech-api',
+    title: 'WIP: trend-tech-api',
+    description:
+      'QiitaやZennのAPIを使ってトレンド記事を取得したり、後で読むものリストをまとめたりできるAPIです。',
+    link: {
+      url: 'https://github.com/maybe-dog/trend-tech-api',
+      text: 'GitHub',
+    },
+  },
 ];

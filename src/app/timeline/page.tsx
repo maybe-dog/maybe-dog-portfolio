@@ -38,7 +38,7 @@ export default async function Timeline() {
 
   return (
     <div className='md:flex-col md:w-2/3 mx-auto px-4'>
-      <h1 className='text-4xl text-center my-4'>Timeline</h1>
+      <h1 className='text-5xl text-center my-4'>maybe-dog&apos;s Timeline</h1>
       <SimpleTimeline events={sorted_events}></SimpleTimeline>
     </div>
   );

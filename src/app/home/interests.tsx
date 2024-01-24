@@ -9,7 +9,7 @@ const interests: Interest[] = [
     name: 'Webバックエンド',
     icon: 'todo',
     description:
-      '保守性の高いAPI設計やDB設計に興味があります. 最近はNest.jsを触っています.',
+      '保守性の高いAPI設計やDB設計,Webセキュリティなどに興味があります. 最近は関連書籍を月1に1冊は読むように心がけています.',
   },
   {
     name: 'CI/CD',
@@ -39,7 +39,7 @@ export function InterestsComponent(): React.JSX.Element {
             <>
               <h2 className='text-lg my-2'>{interest.name}</h2>
               {interest.description && (
-                <li key={interest.name} className='mt-2 indent-4'>
+                <li key={interest.name} className='my-2 indent-4'>
                   {interest.description}
                 </li>
               )}

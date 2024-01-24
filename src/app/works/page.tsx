@@ -3,7 +3,7 @@ import WorkCard, { WorkCardProps } from 'components/elements/WorkCard/WorkCard';
 export default function Works() {
   return (
     <div className='md:w-2/3 mx-auto'>
-      <h1 className='text-4xl text-center my-4'>Works</h1>
+      <h1 className='text-5xl text-center my-4'>maybe-dog&apos;s Works</h1>
       <div className='grid md:grid-cols-3 gap-4'>
         {works.map((work) => (
           <WorkCard key={work.title} {...work} />

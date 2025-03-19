@@ -34,9 +34,9 @@ export default function Header(props: Props): React.JSX.Element {
           {props.links &&
             props.links.map((link) => (
               <li key={link.name}>
-                <Link 
-                  href={link.to} 
-                  className="transition-colors hover:text-cyan-500 dark:text-neutral-400"
+                <Link
+                  href={link.to}
+                  className='transition-colors hover:text-cyan-500 dark:text-neutral-400'
                 >
                   {link.name}
                 </Link>

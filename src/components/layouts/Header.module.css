@@ -1,5 +1,0 @@
-.textLink {
-  @apply hover:text-cyan-500;
-  @apply transition-colors;
-  @apply dark:text-neutral-400;
-}

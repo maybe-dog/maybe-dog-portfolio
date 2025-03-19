@@ -1,4 +1,4 @@
-import { ComponentStoryObj, Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Skill, SkillCard } from './SkillCard';
 
 export default { component: SkillCard } as Meta<typeof SkillCard>;
